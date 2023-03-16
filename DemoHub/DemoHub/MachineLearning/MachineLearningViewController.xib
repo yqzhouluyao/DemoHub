@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MachineLearningViewController" customModule="DemoHub" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraButton" destination="15Y-Hb-yfi" id="Mx0-Ee-BCy"/>
+                <outlet property="imageView" destination="zRJ-g9-J4s" id="yoq-sq-CGZ"/>
+                <outlet property="photoLibraryButton" destination="oJE-oY-OuS" id="Swj-85-TfY"/>
+                <outlet property="resultsConstraint" destination="xfK-4E-gZy" id="6Pw-FS-xkW"/>
+                <outlet property="resultsLabel" destination="q7S-hp-YLi" id="cdp-UY-SFA"/>
+                <outlet property="resultsView" destination="G4P-nO-lzZ" id="8Oo-H1-2JR"/>
+                <outlet property="view" destination="WvW-sb-Pgz" id="7qD-6z-ZgU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WvW-sb-Pgz">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRJ-g9-J4s">
+                    <rect key="frame" x="0.0" y="-1" width="392" height="852"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15Y-Hb-yfi">
+                    <rect key="frame" x="236.66666666666663" y="738" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Pfv-Z3-fao"/>
+                        <constraint firstAttribute="width" constant="60" id="uwD-43-L4f"/>
+                    </constraints>
+                    <state key="normal" image="camera">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="takePicture" destination="-1" eventType="touchUpInside" id="79p-pO-ou1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJE-oY-OuS">
+                    <rect key="frame" x="96.666666666666671" y="738" width="60.000000000000014" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="cbA-ex-5On"/>
+                        <constraint firstAttribute="width" constant="60" id="onF-Fj-vYq"/>
+                    </constraints>
+                    <state key="normal" image="picture">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="choosePhoto" destination="-1" eventType="touchUpInside" id="iXq-GA-UvF"/>
+                    </connections>
+                </button>
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4P-nO-lzZ">
+                    <rect key="frame" x="111.66666666666669" y="69" width="170" height="36.333333333333343"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0cO-nX-exQ">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="36.333333333333343"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Results go here)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7S-hp-YLi">
+                                <rect key="frame" x="19.999999999999986" y="7.9999999999999982" width="130" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="q7S-hp-YLi" secondAttribute="trailing" constant="20" id="AM8-fC-HPS"/>
+                            <constraint firstItem="q7S-hp-YLi" firstAttribute="leading" secondItem="0cO-nX-exQ" secondAttribute="leading" constant="20" id="SK5-6b-9vc"/>
+                            <constraint firstAttribute="bottom" secondItem="q7S-hp-YLi" secondAttribute="bottom" constant="8" id="dE5-Gm-izk"/>
+                            <constraint firstItem="q7S-hp-YLi" firstAttribute="top" secondItem="0cO-nX-exQ" secondAttribute="top" constant="8" id="jIn-kI-rab"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="wdv-HM-ISf"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="G4P-nO-lzZ" firstAttribute="centerX" secondItem="WvW-sb-Pgz" secondAttribute="centerX" id="6Z0-hx-Tbc"/>
+                <constraint firstItem="15Y-Hb-yfi" firstAttribute="centerX" secondItem="WvW-sb-Pgz" secondAttribute="centerX" constant="70" id="IRB-B2-TcJ"/>
+                <constraint firstItem="15Y-Hb-yfi" firstAttribute="bottom" secondItem="wdv-HM-ISf" secondAttribute="bottom" constant="-20" id="K05-UP-cBA"/>
+                <constraint firstItem="oJE-oY-OuS" firstAttribute="centerX" secondItem="WvW-sb-Pgz" secondAttribute="centerX" constant="-70" id="ZeB-rR-13L"/>
+                <constraint firstItem="oJE-oY-OuS" firstAttribute="bottom" secondItem="wdv-HM-ISf" secondAttribute="bottom" constant="-20" id="wLn-OU-aQJ"/>
+                <constraint firstItem="wdv-HM-ISf" firstAttribute="top" secondItem="G4P-nO-lzZ" secondAttribute="top" constant="-10" id="xfK-4E-gZy"/>
+            </constraints>
+            <point key="canvasLocation" x="-173" y="-212"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera" width="60" height="60"/>
+        <image name="picture" width="60" height="60"/>
+    </resources>
+</document>
