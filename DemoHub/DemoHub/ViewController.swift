@@ -38,11 +38,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            
-           // Instantiate the MachineLearningViewController
-           let machineLearningVC = MachineLearningViewController()
-           
-           // Push the view controller onto the navigation stack
-           navigationController?.pushViewController(machineLearningVC, animated: true)
+//           // Instantiate the MachineLearningViewController
+//           let machineLearningVC = MachineLearningViewController()
+//
+//           // Push the view controller onto the navigation stack
+//           navigationController?.pushViewController(machineLearningVC, animated: true)
+//
+        
+        let arKitVC = ARKitVC()
+        navigationController?.pushViewController(arKitVC, animated: true)
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
