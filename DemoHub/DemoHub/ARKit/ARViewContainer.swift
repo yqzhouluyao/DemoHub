@@ -5,7 +5,15 @@ import SwiftUI
 import RealityKit
 
 var arView: ARView!
-
+/*
+ 1、设置：初始化 ARViewContainer 并创建一个 ARView 实例。将 AR 会话委托设置为 ADelegateHandler 的实例。
+ 2、使用 TrueDepth 相机跟踪面部特征。使用配置和选项运行 AR 会话以重置跟踪并删除现有锚点。
+ 3、检测面部和面部特征：ARKit 自动检测用户的面部并创建 ARFaceAnchor 对象。这些对象包含有关用户面部几何形状的信息，包括眼睛、鼻子和嘴巴等面部特征的位置和方向。
+ 4、更新场景：在session(_:didUpdate:)委托函数中，在更新的anchors列表中找到ARFaceAnchor。使用来自 ARFaceAnchor 的混合形状值和其他面部信息将动画应用于场景，例如让眼球注视特定点或为机器人的面部设置动画。
+ 5、渲染和显示：ARView 使用应用的道具和动画实时渲染更新的场景。用户可以通过屏幕上添加的道具和动画看到自己的脸。
+ 6、响应用户输入：应用程序通过更新 ARView 并相应地添加或删除锚点来响应用户输入，例如更改当前道具。
+ 实施过程包括设置和配置用于面部跟踪的 AR 会话、检测面部特征、根据面部信息更新 AR 场景、渲染场景以及对用户输入做出反应。
+ */
 
 //根据用户的面部表情使用各种面部道具和动画显示和更新 AR 场景。
 struct ARViewContainer: UIViewRepresentable {
